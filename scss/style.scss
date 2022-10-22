@@ -1,1 +1,476 @@
 @import 'nullset.scss';
+
+$Lato: 'Lato', sans-serif;
+$Roboto: 'Roboto';
+$accentColor: #07C8C8;
+
+$maxWidth: 1980;
+@mixin adaptiv-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin blue-btn {
+     background: #07C8C8;
+     border: 1px solid #FFFFFF;
+     color: #FFFFFF;
+}
+
+@mixin white-btn {
+     background: #FFFFFF;
+     border: 1px solid #2A2B30;
+     color: #000000;
+}
+
+html{
+     scroll-behavior: smooth;
+}
+
+body{
+     display: flex;
+     font-family: $Lato;
+     flex-direction: column;
+     width: 100%;
+     height: 180%;
+     font-size: 16px;
+}
+
+
+.container {
+     display: flex;
+     width: 100%;
+     max-width: 1172px;
+     margin: auto;
+}
+
+.header {
+     position: fixed;
+     display: flex;
+     flex-shrink: 0;
+     background: rgba(16, 16, 29, 0.9);
+     width: 100%;
+     height: 100px;
+     .container{
+          align-items: center;
+          flex-direction: row;
+          justify-content: space-between;
+     }
+     &__logo {
+     }
+}
+
+.nav {
+     cursor: default;
+     font-family: $Roboto;
+     &__links {
+          cursor: default;
+          a{
+               color: #FFFFFF;
+               margin-right: 60px;
+               transition: ease-in .2s all;
+               cursor: pointer;
+               text-transform: uppercase;
+               font-style: normal;
+               font-weight: 600;
+               line-height: 15px;
+               @include adaptiv-font(13, 8);
+          }
+          a:hover{
+               color: $accentColor;
+          }
+     }
+     &__links:last-child{
+          margin-right: 48px;
+     }
+}
+
+main {
+     display: flex;
+     flex: 1 0 auto;
+     flex-direction: column;
+     height: auto;
+}
+
+.banner {
+     width: 100%;
+     height: 100%;
+     max-height: 825px;
+     background-image: url('/recources/img/back.png');
+     background-repeat: no-repeat;
+     background-size: cover;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding-top: 22px;
+     .container{
+          max-height: 444px;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+     }
+     &__caption {
+          p{
+               cursor: default;
+               color: #07C8C8;
+               text-transform: uppercase;
+               font-weight: 700;
+               line-height: 58px;
+               @include adaptiv-font(48, 19);
+               max-width: 780px;
+               span{
+                    color: #000000;
+               }
+          }
+     }
+
+     &__text {
+          color: #2A2B30;
+          font-family: $Lato;
+          font-style: normal;
+          @include adaptiv-font(20, 10);
+          line-height: 24px;
+          // margin-top: 80px;
+          span{
+               font-weight: 700;
+               margin-bottom: 10px;
+          }
+          li{
+               list-style-type: none;
+               margin-bottom: 5px;
+          }
+          li:before {
+               content: "- ";
+          }
+     }
+
+     &__btns {
+          a{
+               text-transform: uppercase;
+               border-radius: 4px;
+               transition: ease-in .2s all;
+               cursor: pointer;
+          }
+          a:nth-child(1){
+               @include white-btn;
+               padding: 15px 68px;
+               margin-right: 30px;
+          }
+          a:nth-child(2){
+               @include white-btn;
+               padding: 15px 54px;
+          }
+          a:nth-child(1):hover{
+               @include blue-btn;
+          }
+          a:nth-child(2):hover{
+               @include blue-btn;
+          }
+     }
+}
+.content {
+     width: 100%;
+     height: 100%;
+     max-height: 920px;
+     background-image: url('/recources/img/BG.png');
+     background-repeat: no-repeat;
+     background-size: cover;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     .container{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+     }
+     .scheme {
+          display: flex;
+          flex-direction: column;
+          font-weight: 400;
+          font-style: normal;
+          text-align: center;
+          width: 100%;
+		&__title {
+               font-family: $Roboto;
+               line-height: 42px;
+               @include adaptiv-font(36, 16);
+               text-transform: uppercase;
+               color: #FFFFFF;
+               span{
+                    color: $accentColor;
+               }
+		}
+
+		&__subtitle {
+               font-family: $Lato;
+               @include adaptiv-font(20, 10);
+               line-height: 24px;
+               color: #BBBBBB;
+               margin-top: 30px;
+		}
+
+		&__content {
+               display: flex;
+               flex-direction: row;
+               align-items: center;
+               justify-content: space-between;
+               margin-top: 80px;
+		}
+
+		&__elem {
+               max-width: 100px;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+		}
+
+		&__cirle {
+               max-width: 100px;
+               max-height: 100px;
+               padding: 23px;
+               // width: 100px;
+               // height: 100px;
+               border-radius: 50%;
+               background: $accentColor;
+               border: 5px solid #14317B;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+		}
+
+		&__text {
+               margin-top: 20px;
+               font-family: $Lato;
+               @include adaptiv-font(16, 8);
+               line-height: 19px;
+               text-align: center;
+               color: #FFFFFF;
+               width: 190%;
+               height: 0;
+               word-wrap:normal;
+		}
+
+		&__dot {
+               width: 6px;
+               height: 6px;
+               background: #C4C4C4;
+               border-radius: 50%;
+		}
+}
+
+     .form {
+          margin-top: 80px;
+          display: grid;
+          grid-gap: 30px;
+          width: 100%;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(3, 1fr);
+          .input-select{
+               grid-area: 1 / 1 / 2 / 2;
+          }
+          .input-email{
+               grid-area: 1 / 2 / 2 / 3;
+          }
+          .input-name{
+               grid-area: 1 / 3 / 2 / 4;
+          }
+          .input-range{
+               grid-area: 2 / 1 / 3 / 3;
+               display: flex;
+               flex-direction: column;
+               .form__label{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 100%;
+                    @include adaptiv-font(18, 8);
+                    line-height: 22px;
+                    label{
+                         font-family: $Lato;
+                         font-style: normal;
+                         font-weight: 400;
+                         color: #FFFFFF;
+                    }
+                    span{
+                         font-family: $Roboto;
+                         font-style: italic;
+                         font-weight: 100;
+                         color: rgba(255, 255, 255, 0.85);
+                    }
+               }
+          }
+          .input-file{
+               grid-area: 2 / 3 / 3 / 4;
+               input {
+                    width: 100%;
+                    height: 0.1px;
+                    opacity: 0;
+                    overflow: hidden;
+                    position: absolute;
+                    z-index: -1;
+                    max-width: 370px;
+                    max-height: 48px;
+               }
+               input + label {
+                    width: 100%;
+                    height: 100%;
+                    max-width: 370px;
+                    max-height: 48px;
+                    background: rgba(255, 255, 255, 0.85);
+                    border: 1px solid #FFFFFF;
+                    border-radius: 3px;
+                    padding: 12px 35px 12px 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    font-family: $Lato;
+                    font-style: normal;
+                    font-weight: 400;
+                    @include adaptiv-font (18, 8);
+                    line-height: 22px;
+                    color: #272733;
+                    svg{
+                         margin-right: 10px;
+                    }
+               }
+               
+               input:focus + label,
+               input + label:hover {
+                    background-color: $accentColor;
+                    color: #FFFFFF;
+               }
+               input:focus + label svg path, input + label:hover svg path{
+                    fill: #FFFFFF;
+               }
+               input + label {
+                    cursor: pointer;
+               }
+          }
+          .input-submit{
+               grid-area: 3 / 1 / 4 / 4;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               input{
+                    padding-left: 40px;
+                    text-align: center;
+               }
+          }
+
+          &__input {
+               width: 100%;
+               align-items: center;
+               input{
+                    width: 100%;
+                    height: 100%;
+                    max-width: 370px;
+                    max-height: 48px;
+                    background: rgba(255, 255, 255, 0.85);
+                    border: 1px solid #FFFFFF;
+                    border-radius: 3px;
+                    padding: 12px 35px 12px 10px;
+                    font-family: $Lato;
+                    font-style: normal;
+                    font-weight: 400;
+                    @include adaptiv-font (18, 8);
+                    line-height: 22px;
+                    color: #272733;
+               }
+               input[type= range]{
+                    max-width: 100%;
+                    height: auto;
+                    max-height: 6px;
+                    padding: 0;
+               }
+
+               ::placeholder, input{
+                    font-family: $Lato;
+                    font-style: normal;
+                    font-weight: 400;
+                    @include adaptiv-font (18, 8);
+                    line-height: 22px;
+                    color: #272733;
+               }
+
+               input[type=submit]{
+                    cursor: pointer;
+                    @include blue-btn;
+                    text-transform: uppercase;
+               }
+               input[type=submit]:hover{
+                    @include white-btn;
+               }
+		}
+     }
+}
+
+footer {
+     display: flex;
+     flex-shrink: 0;
+     background: #3D4050;
+     width: 100%;
+     height: 100%;
+     max-height: 80px;
+     align-items: center;
+     justify-content: center;
+}
+.footer {
+     .container {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          height: 100%;
+          align-items: center;
+          justify-content: space-between;
+          font-family: $Lato;
+          font-style: normal;
+          font-weight: 400;
+     }
+
+     &__copyright {
+          @include adaptiv-font(13, 8);
+          line-height: 16px;
+          color: #FFFFFF;
+     }
+     &__money, &__contact{
+          display: flex;
+          flex-direction: row;
+     }
+     &__money {
+          border-left: 1px solid #C3C3C3;
+          border-right: 1px solid #C3C3C3;
+          padding: 0 21px;
+     }
+     &__link {
+          text-align: center;
+          margin: 0 19px;
+          a{
+               @include adaptiv-font(13, 8);
+               line-height: 16px;
+               color: #C3C3C3;
+          }
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img{
+               margin-right: 10px;
+          }
+     }
+
+     &__contact {
+          a{
+               color: #FFFFFF;
+          }
+          .footer__link:last-child:last-child
+          .footer__link:last-child:last-child{
+               margin: 0 0;
+          }
+     }
+}
+
+
