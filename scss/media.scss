@@ -105,11 +105,13 @@
           }
      }
      .banner {
-          max-height: 580px;
+          height: 110vh;
+          // max-height: 580px;
+          max-height: 120vh;
           display: flex;
           align-items: center;
           justify-content: center;
-          padding-top: 13vh;
+          padding-top: 0;
           .container{
                max-height: 444px;
                height: 100%;
@@ -278,5 +280,9 @@
                height: auto !important;
                word-wrap:normal;
 		}
-}
+     }
+     .content {
+          height: 100%;
+          max-height: 110vh;
+     }
 }
