@@ -286,3 +286,18 @@
           max-height: 110vh;
      }
 }
+
+@media only screen and (max-height : 510px) {
+     @media only screen and (max-width : 920px) {
+          .banner {
+               height: 200vh !important;
+               // max-height: 580px;
+               max-height: 250vh !important;
+          }
+          .content {
+               height: 100% !important;
+               max-height: 200vh !important;
+          }
+     }
+     
+}
