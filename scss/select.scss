@@ -12,19 +12,19 @@ $maxWidth: 1980;
      position: relative;
      display: inline-block;
 }
-.input-select:hover .input-select__dropdown-content {
+.input-select:focus .input-select__dropdown-content {
      display: flex;
 }
-.input-select:hover .input-select__dropbtn{
+.input-select:focus .input-select__dropbtn{
      color: #FFFFFF;
      background: rgba(61, 64, 80, 0.85);
      border-color: transparent;
      border-radius: 3px 3px 0px 0px;
 }
-.input-select:hover .input-select__dropbtn svg {
+.input-select:focus .input-select__dropbtn svg {
      transform: rotate(180deg);
 }
-.input-select:hover .input-select__dropbtn svg path{
+.input-select:focus .input-select__dropbtn svg path{
      fill: #FFFFFF;
 }
 .input-select{
