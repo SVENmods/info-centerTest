@@ -1,4 +1,7 @@
 @media only screen and (max-width : 1300px) {
+     html{
+          overflow-x: hidden;
+     }
      .container {
           padding: 0 30px;
      }
@@ -28,5 +31,252 @@
           }
           
      }
+     .footer {
+          &__money {
+               padding: 0 0px;
+          }
+          &__link {
+               margin: 0 5px;
+          }
+     }
+}
+
+@media only screen and (max-width : 710px) {
+     .nav {
+          &__links {
+               a{
+                    margin-left: 20px;
+                    margin-right: 0px;
+               }
+          }
+          &__links:last-child{
+               margin-right: 0px;
+          }
+          a:first-child{
+               margin-left: 20px;
+          }
+     }
+     .scheme{
+          &__cirle {
+               max-width: 80px !important;
+               max-height: 80px !important;
+               padding: 10px;
+		}
+     }
+}
+
+@media only screen and (max-height : 730px) {
+     .banner {
+          padding-top: 22px;
+          .container{
+               max-height: 344px;
+          }
+     }
+     .scheme{
+          &__content {
+               margin-top: 10px !important;
+		}
+          &__subtitle {
+               margin-top: 10px !important;
+		}
+     }
+}
+
+@media only screen and (max-width : 650px) {
+     .header {
+          height: 100px;
+          .container{
+               width: 100% !important;
+               align-items: center;
+               flex-direction: column;
+               justify-content: center;
+          }
+     }
+     .nav {
+          margin-top: 10px;
+          &__links {
+               a{
+                    margin-left: 0 !important;
+                    margin-right: 10px;
+               }
+               a:last-child{
+                    margin-right: 0px;
+               }
+          }
+     }
+     .banner {
+          max-height: 580px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding-top: 13vh;
+          .container{
+               max-height: 444px;
+               height: 100%;
+               display: flex;
+               flex-direction: column;
+               justify-content: space-between;
+          }
+          &__caption {
+               p{
+                    line-height: 28px;
+               }
+          }
      
+          &__text {
+               line-height: 14px;
+               span{
+
+                    margin-bottom: 5px;
+               }
+               li{
+                    margin-bottom: 3px;
+               }
+          }
+     
+          &__btns {
+               display: flex;
+               flex-direction: column;
+               margin-top: 10px;
+               a{
+                    display: flex;
+                    justify-content: center;
+                    line-height: 12px;
+               }
+               a:nth-child(1){
+                    padding: 10px 28px;
+                    margin-right: 0px;
+               }
+               a:nth-child(2){
+                    margin-top: 10px;
+                    padding: 10px 24px;
+               }
+          }
+     }
+     .footer {
+          .container {
+               display: flex;
+               flex-direction: column;
+               width: 100%;
+               height: 100%;
+               align-items: center;
+               justify-content: space-between;
+               font-style: normal;
+               font-weight: 400;
+               padding: 5px;
+          }
+     
+          &__copyright {
+               line-height: 16px;
+               color: #FFFFFF;
+          }
+          &__money, &__contact{
+               display: flex;
+               flex-direction: row;
+          }
+          &__money {
+               border-left: 1px solid #C3C3C3;
+               border-right: 1px solid #C3C3C3;
+               padding: 0 5px;
+          }
+          &__link {
+               text-align: center;
+               margin: 0 5px;
+               a{
+                    line-height: 16px;
+                    color: #C3C3C3;
+               }
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               img{
+                    margin-right: 10px;
+               }
+          }
+     
+          &__contact {
+               a{
+                    color: #FFFFFF;
+               }
+               .footer__link:last-child:last-child
+               .footer__link:last-child:last-child{
+                    margin: 0 0;
+               }
+          }
+     }
+     .form {
+          display: grid;
+          grid-gap: 10px !important;
+          width: 100%;
+          grid-template-columns: repeat(2, 1fr) !important;
+          grid-template-rows: repeat(4, 1fr) !important;
+          margin-top: 30px !important;
+          .input-select{
+               grid-area: 1 / 1 / 2 / 2 !important;
+          }
+          .input-email{
+               grid-area: 1 / 2 / 2 / 3 !important;
+          }
+          .input-name{
+               grid-area: 2 / 1 / 3 / 2 !important;
+          }
+          .input-range{
+               grid-area: 3 / 1 / 4 / 3 !important;
+          }
+          .input-file{
+               grid-area: 2 / 2 / 3 / 3 !important;
+               input + label {
+                    max-height: 38px !important;
+               }
+          }
+          .input-submit{
+               grid-area: 4 / 1 / 5 / 3 !important;
+               align-items: center !important;
+               justify-content: center !important;
+               margin-top: 5px !important;
+               input{
+                    padding: 0 !important;
+                    text-align: center;
+               }
+          }
+
+          &__input {
+               input{
+                    max-height: 38px !important;
+               }
+		}
+          .input-select{
+               &__dropbtn{
+                    max-width: 370px;
+                    max-height: 38px;
+               }
+          }
+     }
+     .scheme {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+		&__content {
+               justify-content: center !important;
+		}
+		&__elem {
+               align-items: center;
+               margin: 10px 15px;
+		}
+
+		&__cirle {
+               max-width: 70px !important;
+               max-height: 70px !important;
+               padding: 10px !important;
+		}
+
+		&__text {
+               margin-top: 5px !important;
+               line-height: 10px !important;
+               width: 190%;
+               max-width: 100%;
+               height: auto !important;
+               word-wrap:normal;
+		}
+}
 }
