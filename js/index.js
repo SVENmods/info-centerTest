@@ -12,5 +12,6 @@ for (var i = linkVal.length; i--; ) {
   link[i] = linkVal[i].addEventListener("click", function (e) {
     document.querySelector("#input-select-selected-value").innerHTML =
       e.target.innerHTML;
+    document.querySelector(".input-select").blur();
   });
 }
